@@ -93,4 +93,5 @@ def ask():
 
 if __name__ == '__main__':
     # Ativar o modo debug e rodar o servidor Flask
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Usa a porta fornecida pela Render ou 5000 como fallback
+    app.run(host='0.0.0.0', port=port, debug=True)
